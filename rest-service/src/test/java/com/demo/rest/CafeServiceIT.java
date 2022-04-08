@@ -32,18 +32,6 @@ public class CafeServiceIT {
             .withImagePullPolicy(PullPolicy.defaultPolicy())
             .waitingFor(Wait.forHttp("/health/ready"));
 
-    // FIXME: trying to incorporte devc image with testcontainers
-    // @Container
-    // public GenericContainer cont = new GenericContainer(DockerImageName.parse("rest-service-dev-mode:latest"))
-    //         .withExposedPorts(9080)
-    //         .withImagePullPolicy(PullPolicy.defaultPolicy())
-    //         .waitingFor(Wait.forHttp("/health/ready"))
-    //         .withClasspathResourceMapping("/Users/kathrynkodama/devex/demos/devnexus-2022/rest-service/target/.libertyDevc/apps", "/config/apps", BindMode.READ_ONLY) // results in classloading issue
-    //         .withClasspathResourceMapping("/Users/kathrynkodama/devex/demos/devnexus-2022/rest-service/target/.libertyDevc/dropins", "/config/dropins", BindMode.READ_ONLY)
-    //         .withClasspathResourceMapping("/Users/kathrynkodama/devex/demos/devnexus-2022/rest-service", "/devmode", BindMode.READ_ONLY)
-    //         .withClasspathResourceMapping("/Users/kathrynkodama/devex/demos/devnexus-2022/rest-service/target/liberty/wlp/usr/servers/defaultServer/logs", "/logs", BindMode.READ_ONLY)
-    //         .withClasspathResourceMapping(" /Users/kathrynkodama/.m2/repository", ":/devmode-maven-cache ", BindMode.READ_ONLY);
-
     @BeforeEach
     public void setup() {
         baseUrl = "http://" + cont.getContainerIpAddress() + ":" + cont.getFirstMappedPort();;
