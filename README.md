@@ -26,7 +26,11 @@ Tooling used:
 ## Part 3: Testing
  In /rest-service[/rest-service] application 
 - Write an integration test with junit, show dev mode hot testing
-- Write an integration test with plain testcontainers
+- Stop dev mode
+- Show how we can modify that test to use testcontainers
+ - Package application to generate war.xml
+ - build docker image with build -t 
+ - Run with mvn:failsafe:integration-test
 
 Tooling used:
 - Liberty dev mode for containers
