@@ -24,6 +24,7 @@
 
 package com.example.rest.client.models;
 
+
 import javax.json.bind.annotation.JsonbProperty;
 
 public class Drink  {

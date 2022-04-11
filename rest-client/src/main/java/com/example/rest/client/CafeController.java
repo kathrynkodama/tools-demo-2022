@@ -1,5 +1,9 @@
 package com.example.rest.client;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.ws.rs.Path;
+
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -23,12 +27,11 @@ public class CafeController {
     @Inject
     @RestClient
     DefaultApi cafeSvc;
-
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/getMenu")
     public List<Drink> getMenu() throws ProcessingException, ApiException {
         return cafeSvc.apiCafeGet();
     }
-    
 }

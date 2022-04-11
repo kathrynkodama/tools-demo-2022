@@ -33,6 +33,7 @@ import java.util.Map;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
+
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
@@ -61,5 +62,10 @@ public interface DefaultApi  {
     @Path("/api/cafe/size")
     @Produces({ "*/*" })
     public Integer apiCafeSizeGet() throws ApiException, ProcessingException;
+
+    @GET
+    @Path("/api/hello")
+    @Produces({ "text/plain" })
+    public String apiHelloGet() throws ApiException, ProcessingException;
 }
 
